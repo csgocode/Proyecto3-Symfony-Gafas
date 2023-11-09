@@ -74,7 +74,7 @@
                                  <a class="nav-link" href="/contacto">Contact Us</a>
                               </li>
                               {% if app.user %}
-  <li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out sr-icons"></i> {{ app.user.name }} - Logout</a></li>
+  <li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out sr-icons"></i> {{ app.user.email }} - Logout</a></li>
 {% else %}
   <li class="av-item d_none login_btn"><a href="{{ path('app_login') }}"><i class="fa fa-sign-in sr-icons"></i> Login</a></li>
   <li class="nav-item d_none"><a href="{{ path('app_register') }}"><i class="fa fa-user-secret sr-icons"></i> Register</a></li>
