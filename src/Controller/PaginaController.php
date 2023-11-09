@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class PaginaController extends AbstractController
 {
     #[Route('/', name: 'app_pagina')]
@@ -16,6 +17,13 @@ class PaginaController extends AbstractController
         ]);
     }
 
+    #[Route('/index', name: 'app_pagina2')]
+    public function index2(): Response
+    {
+        return $this->render('pagina/index.html.twig', [
+            'controller_name' => 'PaginaController',
+        ]);
+    }
 
 
     #[Route('/about', name: 'about')]

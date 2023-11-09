@@ -73,12 +73,12 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="/contacto">Contact Us</a>
                               </li>
-                              <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href="#">Login</a>
-                              </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#">Register</a>
-                              </li>
+                              {% if app.user %}
+  <li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out sr-icons"></i> {{ app.user.email }} - Logout</a></li>
+{% else %}
+  <li class="av-item d_none login_btn"><a href="{{ path('app_login') }}"><i class="fa fa-sign-in sr-icons"></i> Login</a></li>
+  <li class="nav-item d_none"><a href="{{ path('app_register') }}"><i class="fa fa-user-secret sr-icons"></i> Register</a></li>
+{% endif %}
                               <li class="nav-item d_none sea_icon">
                                  <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
                               </li>
